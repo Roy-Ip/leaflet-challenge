@@ -5,6 +5,7 @@ let map = L.map('map', {
 });
 
 
+
 // Add the OpenStreetMap tiles as the base layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -26,6 +27,7 @@ function getColor(depth) {
   else if (depth < 90) return '#C0392B';
   else return '#7B241C';
 }
+
 
 
 // Define the legend control
@@ -73,6 +75,7 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+
 
 
 // Load the earthquake data using D3

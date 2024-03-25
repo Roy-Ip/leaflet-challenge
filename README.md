@@ -6,4 +6,4 @@ I have uploaded the following:
     - index.html
     - static folder - it contains the JavaScript and css file
 
-Click the following link to the web page: 
+Click the following link to the web page: https://roy-ip.github.io/leaflet-challenge/
