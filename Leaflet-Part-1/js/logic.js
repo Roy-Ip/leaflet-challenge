@@ -82,6 +82,7 @@ legend.addTo(map);
 d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson').then(function (data) {
   L.geoJSON(data, {
     pointToLayer: function (feature, latlng) {
+      let location = feature.properties.place;
       let magnitude = feature.properties.mag;
       let depth = feature.geometry.coordinates[2];
       let radius = calculateRadius(magnitude);
@@ -96,7 +97,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         fillOpacity: 0.8
       }
       return L.circleMarker(latlng, geojsonMarkerOptions)
-        .bindPopup(`<strong>Magnitude:</strong> ${magnitude}<br><strong>Depth:</strong> ${depth} km`);
+        .bindPopup(`<strong>Location:</strong> ${location}<br><strong>Magnitude:</strong> ${magnitude}<br><strong>Depth:</strong> ${depth} km`);
     }
   }).addTo(map);
 });
